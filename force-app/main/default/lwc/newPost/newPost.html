@@ -1,0 +1,95 @@
+<template>
+    <lightning-card>
+        <lightning-layout multiple-rows="true">
+            <!-- Progress bar begin -->
+            <template if:false={firstPage}>
+                <template if:false={finalPage}>
+                    <lightning-layout-item padding="around-small" size="12">
+                        <lightning-progress-indicator current-step={currentScreen} type="path" variant="base">
+                            <template for:each={steps} for:item="step">
+                                <lightning-progress-step label={step.label} value={step.value} key={step.label}></lightning-progress-step>
+                            </template>
+                        </lightning-progress-indicator>
+                    </lightning-layout-item>
+                </template>
+            </template>
+            <!-- Progress bar end -->
+            <lightning-layout-item padding="around-small" size="12">
+                <!-- Form screens begin -->
+                <div style="color: red; margin-left:20px;">
+                    {errorMsg}
+                </div>
+                <template if:true={showScreen}>
+                    <c-screen1></c-screen1>
+                </template>
+                <template if:true={showScreen1}>
+                    <c-type-screen 
+                        ongetrecordid={handleRecordId} 
+                        ongettype={handleType}
+                        type={type}>
+                    </c-type-screen>
+                </template>
+                <template if:true={showScreen2}>
+                    <c-screen2
+                        onaddtitle={handleAddTitle}
+                        onadddescription={handleAddDescription}
+                        onaddtag={handleAddTag}
+                        onremovetag={handleRemoveTag}
+                        title={title}
+                        description={description}
+                        newtags={newTags}>
+                    </c-screen2>
+                </template>
+                <template if:true={showScreen3}>
+                    <c-screen3 ongetbody={handleBody}
+                        ongetfiles={handleFiles}
+                        body={body}
+                        files={files}
+                        myrecordid={recordId}>
+                    </c-screen3>
+                </template>
+                <template if:true={showScreen4}>
+                    <c-screen4 myrecordid={recordId}
+                        type={type}
+                        title={title}   
+                        description={description}     
+                        body={body}   
+                        newtags={newTags}
+                        files={files}>
+                    </c-screen4>
+                </template>
+                <template if:true={showScreen5}>
+                    <c-final-screen></c-final-screen>
+                </template>
+                <!-- Form screens end -->
+            </lightning-layout-item>
+        </lightning-layout>
+        <!-- Footer buttons begin -->
+        <template if:true={firstPage}>
+            <div slot="footer">
+                <button class="slds-button slds-button_neutral button" name="start" onclick={handleClick}>Start</button>
+            </div>
+        </template>
+        <template if:false={firstPage}>
+            <template if:false={finalPage}>
+                <div slot="footer" class="slds-clearfix">
+                    <lightning-button label="Previous" name="previous" onclick={handleClick} slot="actions"
+                        class="slds-var-m-right_x-small slds-float_left">
+                    </lightning-button>
+                    <lightning-button-group class="slds-var-m-left_x-small slds-float_right"  slot="actions">
+                        <lightning-button label="Save and Quit" name="saveAndQuit" onclick={handleClick}></lightning-button>
+                        <lightning-button label="Next" name="save" onclick={handleClick}></lightning-button>
+                    </lightning-button-group>
+                </div>
+            </template>
+        </template>
+        <template if:true={finalPage}>
+            <div slot="footer" class="slds-clearfix">
+                <lightning-button label="Finish" name="finish" onclick={handleClick} slot="actions"
+                    class="slds-var-m-left_x-small slds-float_right">
+                </lightning-button>
+            </div>
+        </template>
+        <!-- Footer buttons end -->
+    </lightning-card>
+</template>

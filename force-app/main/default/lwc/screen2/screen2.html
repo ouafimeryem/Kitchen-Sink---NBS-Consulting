@@ -1,0 +1,21 @@
+<template>
+    <lightning-layout multiple-rows="true" style="min-height: 300px;">
+        <lightning-layout-item size="12" padding="around-small">
+            <lightning-input value={title} type="text" label="Title" required="true" onchange={handleTitleInput}></lightning-input>
+            <lightning-textarea value={description} style="margin-top: 10px;" label="Description" onchange={handleDescriptionInput}></lightning-textarea>
+            <lightning-input style="margin-top: 10px;" type="text" 
+                field-level-help="Press enter to add tag and double click on tag to remove it"
+                label="Tags" onkeypress={handleTagInput}>
+            </lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="8" style="padding-left: 2%;">
+            <div class="tags color">
+                <p>
+                    <template for:each={newtags} for:item="tag">
+                        <a class="color2" data-id={tag.name} ondblclick={removeTag} key={tag.name}>{tag.name}</a>
+                    </template>
+                </p>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

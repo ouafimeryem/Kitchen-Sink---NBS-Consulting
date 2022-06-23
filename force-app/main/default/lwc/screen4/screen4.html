@@ -1,0 +1,47 @@
+<template>
+    <lightning-layout multiple-rows="true" style="min-height: 300px;">
+        <lightning-layout-item padding="around-small" size="12">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="8">
+                    <div class="title">
+                        <p>{title}</p>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" style="text-align: center;">
+                    <div class="type">
+                        <p>{type}</p>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" class="border">
+                    <div class="alignment">
+                        {description} 
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                    <div class="body-rich-text">
+                    </br>
+                        <lightning-input-rich-text class="resize" value={body} disabled="true"></lightning-input-rich-text>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" style="margin-top: 10px;">
+                    Tags: 
+                    <div class="tags color alignment">
+                        <p>
+                            <template for:each={newtags} for:item="tag">
+                                <a class="color2" key={tag.name}>{tag.name}</a>
+                            </template>
+                        </p>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" style="margin-top: 10px;">
+                    Files uploaded: 
+                    <div class="file alignment" style="margin-top: 10px;">
+                        <template for:each={files} for:item="file">
+                            <a key={file.name}>{file.name}</a>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

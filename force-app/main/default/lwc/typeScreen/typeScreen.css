@@ -1,0 +1,26 @@
+.card-style {
+	margin-top: 6%;
+	cursor: pointer;
+	padding: auto;
+}
+
+.card-style:hover {
+	transform: translateY(0) scale(1.05);
+}
+
+.card-style:hover > .my-footer {
+	border-top: 1px groove;
+	font-size: 20pt;
+}
+
+.my-footer {
+	border-top: 1px groove rgb(254, 254, 255, 0.8);
+	text-align: center;
+	margin-top: 3%;
+	padding-top: 2.75%;
+	font-size: 18pt;
+}
+
+.clicked {
+	border: 1px solid #c9c9c9;
+}
