@@ -1,0 +1,58 @@
+<template>
+    <div class="main-container">
+        <lightning-icon icon-name="standard:lightning_usage" alternative-text="Approved" title="Approved"></lightning-icon> Interactions
+        <div class="cards">
+          <div class="card card-1">
+            <div class="card__icon"><i class="fas fa-bolt"></i></div>
+            <p class="card__exit"><i class="fas fa-times"></i></p>
+            <h2 class="card__title">Rank</h2>
+            <p class="card__apply">
+              <a class="card__link" >{reputation} Points <i class="fas fa-arrow-right"></i></a>
+            </p>
+          </div>
+          <div class="card card-2">
+            <div class="card__icon"><i class="fas fa-bolt"></i></div>
+            <p class="card__exit"><i class="fas fa-times"></i></p>
+            <h2 class="card__title">Posts</h2>
+            <p class="card__apply">
+              <a class="card__link">{posts} <i class="fas fa-arrow-right"></i></a>
+            </p>
+          </div>
+          <div class="card card-3">
+            <div class="card__icon"><i class="fas fa-bolt"></i></div>
+            <p class="card__exit"><i class="fas fa-times"></i></p>
+            <h2 class="card__title">Likes</h2>
+            <p class="card__apply">
+              <a class="card__link">{likes} <i class="fas fa-arrow-right"></i></a>
+            </p>
+          </div>
+          <div class="card card-4" >
+            
+            <div class="card__icon"><i class="fas fa-bolt"></i></div>
+            <p class="card__exit"><i class="fas fa-times"></i></p>
+            <h2 class="card__title">Comments</h2>
+            <p class="card__apply">
+              <a class="card__link" >{comments} <i class="fas fa-arrow-right"></i></a>
+            </p>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="main-container2"></div>
+      <div class="main-container3">
+        <lightning-icon icon-name="standard:reward" alternative-text="Approved" title="Approved"></lightning-icon> Badges
+        <div class="cards">
+          <template for:each={badges} for:item="badge" >
+          <div class="card" key={badge.Id}>
+            <img src={badge.badgeImage__c}>
+          </div>
+        </template>
+          
+          
+          
+        </div>
+      </div>
+
+
+</template>

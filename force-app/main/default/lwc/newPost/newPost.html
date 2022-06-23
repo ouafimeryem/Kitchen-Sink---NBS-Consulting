@@ -1,7 +1,6 @@
 <template>
     <lightning-card>
         <lightning-layout multiple-rows="true">
-            <!-- Progress bar begin -->
             <template if:false={firstPage}>
                 <template if:false={finalPage}>
                     <lightning-layout-item padding="around-small" size="12">
@@ -13,9 +12,7 @@
                     </lightning-layout-item>
                 </template>
             </template>
-            <!-- Progress bar end -->
             <lightning-layout-item padding="around-small" size="12">
-                <!-- Form screens begin -->
                 <div style="color: red; margin-left:20px;">
                     {errorMsg}
                 </div>
@@ -50,21 +47,18 @@
                 </template>
                 <template if:true={showScreen4}>
                     <c-screen4 myrecordid={recordId}
-                        type={type}
-                        title={title}   
-                        description={description}     
-                        body={body}   
-                        newtags={newTags}
-                        files={files}>
-                    </c-screen4>
+                    type={type}
+                    title={title}   
+                    description={description}     
+                    body={body}   
+                    newtags={newTags}
+                    files={files}></c-screen4>
                 </template>
                 <template if:true={showScreen5}>
                     <c-final-screen></c-final-screen>
                 </template>
-                <!-- Form screens end -->
             </lightning-layout-item>
         </lightning-layout>
-        <!-- Footer buttons begin -->
         <template if:true={firstPage}>
             <div slot="footer">
                 <button class="slds-button slds-button_neutral button" name="start" onclick={handleClick}>Start</button>
@@ -90,6 +84,5 @@
                 </lightning-button>
             </div>
         </template>
-        <!-- Footer buttons end -->
     </lightning-card>
 </template>

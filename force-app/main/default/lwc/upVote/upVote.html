@@ -1,0 +1,14 @@
+<template>
+    <div class="fff">
+        <template if:true={like}>
+            <button class="btn" onclick={inliker}><lightning-icon style="margin-right: 5px;" icon-name="custom:custom1" title="like"></lightning-icon>
+                {msg}</button>
+        </template>
+        <template if:true={likenon}>
+            <button class="btn2" onclick={liker}><lightning-icon style="margin-right: 5px;" icon-name="custom:custom1" title="like"></lightning-icon>
+                {msg}</button>
+        </template>
+   
+    </div>
+
+</template>

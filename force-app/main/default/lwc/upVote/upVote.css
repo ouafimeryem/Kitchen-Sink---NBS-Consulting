@@ -1,0 +1,16 @@
+.fff{
+    justify-content: center;
+    display: flex;
+    /* margin: 25px; */
+    width: 100%;
+}
+.btn{
+    size: 120px;
+    background-color: rgb(255 123 132); color:aliceblue ;
+    border: none;
+}
+
+.btn2{
+    size: 120px;
+    background-color: rgb(250, 250, 250); color:rgb(255 123 132);    border: none;
+}
