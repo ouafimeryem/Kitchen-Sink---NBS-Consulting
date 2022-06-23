@@ -134,7 +134,6 @@ export default class NewPost extends NavigationMixin(LightningElement) {
         }
     }
 
-    //Function used to switch between screens
     showNextScreen(direction){ 
         if(direction == 'Next'){
             var newScreen =  parseInt(this.currentScreen) + 1;

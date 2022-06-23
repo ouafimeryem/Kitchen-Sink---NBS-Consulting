@@ -1,61 +1,63 @@
 <template>
 
-  <c-search-feed onchild={haldleChild}></c-search-feed>
- 
-  <div class="container" style="background: white;">
-   
-    <nav class="navMenu" style="background: white;">
-      <a onclick={allPosts}>All posts</a>
-      <a onclick={solPosts}>Solutions</a>
-      <a onclick={chaPosts}>Challenges</a>
-      <a onclick={artPosts}>Articles</a>
-      <div class="dot"></div>
-      
-    </nav>
-    <br>
-    <div class="row">
-      
-      <template for:each={posts} for:item="post">
-      <div class="col" key={post.Id}>
-        <div class="blog-card blog-card-blog">
-          <div class="blog-card-image">
-              <a onclick={viewRecord} data-arg1={post.Id}><img class="img" src={post.img__c}></a>
-              <div class="ripple-cont"></div>
-          </div>
-          <div class="blog-table">
-              <h6 class="blog-category blog-text-solution">{post.Type__c}</h6>
-              <h4 class="blog-card-caption">
-                  <a onclick={viewRecord} data-arg1={post.Id}>{post.title__c}</a>
-              </h4>
-              <p class="blog-card-description">{post.Description__c}</p>
-              <div class="ftr">
-                  <div class="author">
-                      <a href="#"> <img src="https://picsum.photos/id/1005/5760/3840" alt="..." class="avatar img-raised"> <span onclick={viewRecord2} data-arg1={post.Owner.Id}>{post.Owner.Name}</span> </a>
-                  </div>
-                  <div class="stats"> <i class="far fa-clock"></i> {post.Created_Date__c} </div>
-              </div>
-              <div class="ftr">
-                <div class="author">
-                    <a href="#">  </a>
-                </div>
-                <div class="stats"> 
-                  <span style="color:rgb(0, 255, 221)  ;"> {post.rank__c}  Points</span>&nbsp;&nbsp;<span style="color:rgb(255, 0, 157)  ;"> {post.LikeCount__c}  Likes</span>&nbsp;&nbsp;
-                  <span style="color:rgb(0, 136, 255)  ;"> {post.CommentCount__c}  Commentairs</span>
-                </div>
-               
-                
+<c-search-feed onchild={haldleChild}></c-search-feed>
+
+<div class="container" style="background: white;">
+  
+          
+          <br>
+        
+
+      <div class="row">
+        
+        <template for:each={posts} for:item="post">
+
+        <div class="col" key={post.Id}>
+          <div class="blog-card blog-card-blog">
+            <div class="blog-card-image">
+                <a onclick={viewRecord} data-arg1={post.Id}><img class="img" src={post.img__c}></a>
+                <div class="ripple-cont"></div>
             </div>
-          </div>
+            <div class="blog-table">
+                <h6 class="blog-category blog-text-solution">{post.Type__c}</h6>
+                <h4 class="blog-card-caption">
+                    <a onclick={viewRecord} data-arg1={post.Id}>{post.title__c}</a>
+                </h4>
+                <p class="blog-card-description" style="text-overflow: ellipsis;  
+                overflow:hidden;              
+                white-space:nowrap;           
+                width: 200px;
+                ">{post.Description__c}</p>
+                <div class="ftr">
+                    <div class="author">
+                        <a href="#"> <img src="https://picsum.photos/id/1005/5760/3840" alt="..." class="avatar img-raised"> <span onclick={viewRecord2} data-arg1={post.Owner.Id}>{post.Owner.Name}</span> </a>
+                    </div>
+                    <div class="stats"> <i class="far fa-clock"></i> {post.Created_Date__c} </div>
+                </div>
+                <div class="ftr">
+                  <div class="author">
+                      <a href="#">  </a>
+                  </div>
+                  <div class="stats"> 
+                    <span style="color:rgb(0, 255, 221)  ;"> {post.rank__c}  Points</span>&nbsp;&nbsp;<span style="color:rgb(255, 0, 157)  ;"> {post.LikeCount__c}  Likes</span>&nbsp;&nbsp;
+                    <span style="color:rgb(0, 136, 255)  ;"> {post.CommentCount__c}  Commentairs</span>
+                  </div>
+                  
+                  
+              </div>
+            </div>
+        </div>
       </div>
-    </div>
-  </template>
-    </div>
-  </div>
-   
-
     
+</template>
+  </div>
 
-
+</div>
+  
 
   
+
+
+
+
 </template>
