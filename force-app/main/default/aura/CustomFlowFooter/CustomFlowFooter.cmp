@@ -1,0 +1,58 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    
+    <aura:attribute name="clickedButton" type="String" default="" access="global" />
+    <aura:attribute name="onFinalPage" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="onFirstPage" type="Boolean" default="false" access="global"/>
+
+    
+    <div class="slds-grid slds-grid_align-center slds-grid_align-spread slds-p-around_small ">
+        <div>
+            <aura:if isTrue="{!and(v.onFinalPage == false, v.onFirstPage == false)}">
+                <lightning:button
+                                  variant="brand-outline"
+                                  class = "btnstyle"
+                                  label="Previous" 
+                                  iconName="utility:chevronleft"
+                                  iconPosition="left"
+                                  name="Previous" 
+                                  onclick="{!c.handleClick}" />
+            </aura:if>
+        </div>
+        <div>
+            <aura:if isTrue="{!and(v.onFinalPage == false, v.onFirstPage == false)}">
+                <lightning:button 
+                                  variant="brand"
+                                  class = "btnstyle"
+                                  label="Save and Quit" 
+                                  name="Save and Quit" 
+                                  onclick="{!c.handleClick}" />
+            
+                <lightning:button
+                                  variant="brand"   
+                                  class = "btnstylesuivant"
+                                  label="Save and Next"
+                                  iconName="utility:chevronright"
+                                  iconPosition="right"
+                                  name="Next" 
+                                  onclick="{!c.handleClick}" />
+            </aura:if>
+            <aura:if isTrue="{!v.onFinalPage == true}">
+                <lightning:button
+                                  variant="brand" 
+                                  class = "btnstyle"
+                                  label="Save" 
+                                  name="Next" 
+                                  onclick="{!c.handleClick}" />
+            </aura:if>
+            
+            <aura:if isTrue="{!v.onFirstPage == true}">
+                <lightning:button
+                                  variant="brand" 
+                                  class = "btnstyle"
+                                  label="Start" 
+                                  name="Next" 
+                                  onclick="{!c.handleClick}" />
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

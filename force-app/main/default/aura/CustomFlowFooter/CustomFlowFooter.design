@@ -1,0 +1,5 @@
+<design:component>
+    <design:attribute name="clickedButton" label="Button Click (for output use only)" />
+    <design:attribute name="onFinalPage" label="On Final Page?" default="false"/>
+    <design:attribute name="onFirstPage" label="On First Page?" default="false"/>
+</design:component>

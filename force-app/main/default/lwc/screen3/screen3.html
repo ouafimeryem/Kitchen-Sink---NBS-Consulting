@@ -1,0 +1,24 @@
+<template>
+    <lightning-layout multiple-rows="true" style="min-height: 300px;">
+        <lightning-layout-item padding="around-small" size="12">
+            <p style="font-size: medium; margin-bottom: 10px;"><b>Write the body here</b></p>
+            <lightning-input-rich-text class="resize" onchange={handleBodyInput}></lightning-input-rich-text>
+            <div style="margin-top: 20px;">
+                <lightning-file-upload
+                    value={body}
+                    label="Attach file"
+                    name="fileUploader"
+                    record-id={myrecordid}
+                    onuploadfinished={handleUploadFinished}
+                    multiple
+                >
+                </lightning-file-upload>
+                <div class="file" style="margin-top: 10px;">
+                    <template for:each={files} for:item="file">
+                        <a key={file.name}>{file.name}</a>
+                    </template>
+                </div>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

@@ -1,0 +1,26 @@
+:host {
+    --sds-c-textarea-sizing-min-height: 300px;
+}
+
+.file a{
+    color: white;
+    background-color: #de3f3e;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    margin: 0 16px 8px 0;
+    padding: 0 10px 0 12px;
+    -webkit-border-bottom-right-radius: 3px;    
+    border-bottom-right-radius: 3px;
+    -webkit-border-top-right-radius: 3px;    
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;    
+    border-bottom-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;    
+    border-top-left-radius: 3px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    font-size: 12px;
+    text-decoration: none;
+}

@@ -1,0 +1,52 @@
+<template>
+    <lightning-layout multiple-rows="true" style="min-height: 300px;">
+        <lightning-layout-item padding="around-small" size="4">
+            <div class="card-style" data-id="question" onclick={handleQuestionClick}>
+                <div>
+                    <img src={question}>
+                    <div style="padding: 10px;">
+                        <lightning-formatted-rich-text
+                            value={label.questionDescription}
+                        ></lightning-formatted-rich-text>
+                    </div>
+                </div>
+                <div class="my-footer">
+                    <p style="color: #C47C64;">Challenge</p>
+                </div>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="4">
+            <div class="card-style" data-id="implementation" onclick={handleImplementationClick}>
+                <div>
+                    <img src={implementation}>
+                    <div style="padding: 10px;">
+                        <lightning-formatted-rich-text
+                            value={label.implementationDescription}
+                        ></lightning-formatted-rich-text>
+                    </div>
+                    </br>
+                </div>
+                <div class="my-footer">
+                    <p slot="footer" style="color: #F79517;">Implementation</p>
+                </div>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="4">
+            <div class="card-style" data-id="article" onclick={handleArticleClick}>
+                <div>
+                    <img src={article}>
+                    <div style="padding: 10px;">
+                        <lightning-formatted-rich-text
+                            value={label.articleDescription}
+                        ></lightning-formatted-rich-text>
+                    </div>
+                    </br>
+                    </br>
+                </div>
+                <div class="my-footer">
+                    <p slot="footer" style="color: #6A4DA1;">Article</p>
+                </div>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
